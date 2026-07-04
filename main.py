@@ -19,28 +19,50 @@
 # fibonacci(n)
 
 #2- masala
-def decorator(func):
-    def wrapper(a):
-        func(a)
+# def decorator(func):
+#     def wrapper(a):
+#         func(a)
+#
+#         b = []
+#         summa = 0
+#
+#         for i in a:
+#             summa += i
+#             b.append(summa)
+#
+#         print("B massiv:", b)
+#
+#     return wrapper
+#
+#
+# @decorator
+# def massiv(a):
+#     print("A massiv:", a)
+#
+#
+# n = 5
+# a = [2, 3, 5, 8, 9]
+#
+# massiv(a)
 
-        b = []
-        summa = 0
+#3- masala
+from collections import namedtuple
 
-        for i in a:
-            summa += i
-            b.append(summa)
+Car = namedtuple("Car", ["brand", "model", "year", "mileage"])
 
-        print("B massiv:", b)
+cars = []
 
-    return wrapper
+for i in range(5):
+    print(f"{i + 1}-mashina")
+    brand = input("Brend ")
+    model = input("Model")
+    year = input("Yili ")
+    mileage = int(input("Yurgan masofasi "))
 
+    cars.append(Car(brand, model, year, mileage))
 
-@decorator
-def massiv(a):
-    print("A massiv:", a)
+min_car = min(cars, key=lambda car: car.mileage)
 
-
-n = 5
-a = [2, 3, 5, 8, 9]
-
-massiv(a)
+print("\neng kam yurgan mashina")
+print(f"Brend: {min_car.brand}")
+print(f"Yurgan masofasi: {min_car.mileage}")
