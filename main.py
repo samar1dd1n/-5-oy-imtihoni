@@ -1,19 +1,46 @@
+# def decorator(func):
+#     def wrapper(n):
+#         print("Fibonacci sonlari:")
+#         func(n)
+#
+#     return wrapper
+#
+#
+# @decorator
+# def fibonacci(n):
+#     a, b = 0, 1
+#
+#     for _ in range(n):
+#         print(a, end=" ")
+#         a, b = b, a + b
+#
+#
+# n = int(input("n = "))
+# fibonacci(n)
+
+#2- masala
 def decorator(func):
-    def wrapper(n):
-        print("Fibonacci sonlari:")
-        func(n)
+    def wrapper(a):
+        func(a)
+
+        b = []
+        summa = 0
+
+        for i in a:
+            summa += i
+            b.append(summa)
+
+        print("B massiv:", b)
 
     return wrapper
 
 
 @decorator
-def fibonacci(n):
-    a, b = 0, 1
-
-    for _ in range(n):
-        print(a, end=" ")
-        a, b = b, a + b
+def massiv(a):
+    print("A massiv:", a)
 
 
-n = int(input("n = "))
-fibonacci(n)
+n = 5
+a = [2, 3, 5, 8, 9]
+
+massiv(a)
