@@ -45,24 +45,35 @@
 #
 # massiv(a)
 
-#3- masala
-from collections import namedtuple
+# #3- masala
+# from collections import namedtuple
+#
+# Car = namedtuple("Car", ["brand", "model", "year", "mileage"])
+#
+# cars = []
+#
+# for i in range(5):
+#     print(f"{i + 1}-mashina")
+#     brand = input("Brend ")
+#     model = input("Model")
+#     year = input("Yili ")
+#     mileage = int(input("Yurgan masofasi "))
+#
+#     cars.append(Car(brand, model, year, mileage))
+#
+# min_car = min(cars, key=lambda car: car.mileage)
+#
+# print("\neng kam yurgan mashina")
+# print(f"Brend: {min_car.brand}")
+# print(f"Yurgan masofasi: {min_car.mileage}")
 
-Car = namedtuple("Car", ["brand", "model", "year", "mileage"])
+#4-masala
+def words_generator(text):
+    for word in text.split():
+        yield word
 
-cars = []
 
-for i in range(5):
-    print(f"{i + 1}-mashina")
-    brand = input("Brend ")
-    model = input("Model")
-    year = input("Yili ")
-    mileage = int(input("Yurgan masofasi "))
+text = input("Matn kiriting: ")
 
-    cars.append(Car(brand, model, year, mileage))
-
-min_car = min(cars, key=lambda car: car.mileage)
-
-print("\neng kam yurgan mashina")
-print(f"Brend: {min_car.brand}")
-print(f"Yurgan masofasi: {min_car.mileage}")
+for word in words_generator(text):
+    print(word)
